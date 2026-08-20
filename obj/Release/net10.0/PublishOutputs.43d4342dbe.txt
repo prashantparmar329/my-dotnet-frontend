@@ -1,0 +1,6 @@
+C:\inetpub\wwwroot\frontend\publish\FrontendApp.exe
+C:\inetpub\wwwroot\frontend\publish\web.config
+C:\inetpub\wwwroot\frontend\publish\FrontendApp.dll
+C:\inetpub\wwwroot\frontend\publish\FrontendApp.deps.json
+C:\inetpub\wwwroot\frontend\publish\FrontendApp.runtimeconfig.json
+C:\inetpub\wwwroot\frontend\publish\FrontendApp.pdb
