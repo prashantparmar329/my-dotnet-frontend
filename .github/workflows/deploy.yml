@@ -1,0 +1,33 @@
+name: Deploy to IIS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build -c Release
+
+      - name: Publish
+        run: dotnet publish -c Release -o publish
+
+      - name: Deploy to IIS Folder
+        shell: powershell
+        run: |
+          Copy-Item publish\* C:\inetpub\wwwroot\frontend -Recurse -Force
