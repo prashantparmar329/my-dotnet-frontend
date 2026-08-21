@@ -25,8 +25,8 @@ jobs:
       - name: Publish
         run: dotnet publish -c Release -o publish
 
-      - name: Deploy Files
+      - name: Deploy Website Files
         shell: powershell
         run: |
-          robocopy publish C:\inetpub\wwwroot\frontend /E /R:1 /W:1
+          robocopy publish\wwwroot C:\inetpub\wwwroot\frontend\publish\wwwroot /E /R:1 /W:1
           exit 0
