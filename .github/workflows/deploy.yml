@@ -28,4 +28,9 @@ jobs:
       - name: Deploy to IIS
         shell: powershell
         run: |
-          Copy-Item publish\* C:\inetpub\wwwroot\frontend -Recurse -Force
+             - name: Deploy Files
+               shell: powershell
+              run: |
+                    robocopy publish C:\inetpub\wwwroot\frontend /E /R:1 /W:1
+                    exit 0
+   
